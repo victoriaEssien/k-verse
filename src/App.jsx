@@ -16,7 +16,7 @@ function App() {
             Discover a diverse selection of new (and old!) K-dramas. Rate your favorites, engage in fan discussions, explore detailed show descriptions, and many more!
           </p>
           <div className="mt-12">
-            <a href="https://forms.gle/6J2GH4JfRCykRJyS8" className="font-os font-medium text-lg bg-[#2E7D32] text-white px-6 py-3 rounded-md">Join the Waitlist!</a>
+            <a href="https://forms.gle/6J2GH4JfRCykRJyS8" className="font-os font-medium text-lg bg-[#2E7D32] text-white px-6 py-3 rounded-md" target="_blank">Join the Waitlist!</a>
           </div>
         </div>
       </div>
