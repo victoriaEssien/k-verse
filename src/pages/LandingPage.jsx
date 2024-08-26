@@ -2,6 +2,7 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 // import ProtectedRoute from "../components/ProtectedRoute"
 import { Hero, } from "../index"
+import Navbar from "../components/Navbar"
 
 
 
@@ -13,6 +14,7 @@ function LandingPage() {
                 <Routes>
                     <Route exact path="/" element={
                         <>
+                            <Navbar />
                             <Hero />
                         </>
                     }>
