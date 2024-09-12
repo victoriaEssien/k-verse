@@ -1,7 +1,7 @@
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 // import ProtectedRoute from "../components/ProtectedRoute"
-import { Hero, } from "../index"
+import { Hero, DiscoverPage } from "../index"
 import Navbar from "../components/Navbar"
 
 
@@ -19,6 +19,8 @@ function LandingPage() {
                         </>
                     }>
                     </Route>
+                    
+                    <Route path="/discover" element={<DiscoverPage />} />
                     {/* <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/verify-email" element={<VerifyEmail />} />
