@@ -50,7 +50,7 @@ function DiscoverPage() {
     return (
         <div>
             <header className="border-b border-[#F5F5F5] px-4 md:px-12 py-3">
-                <h1 className="font-roboto font-bold text-xl text-[#2E7D32] leading-8">K-Verse</h1>
+                <Link to='/discover' className="font-roboto font-bold text-xl text-[#2E7D32] leading-8">K-Verse</Link>
             </header>
 
             <div className="mx-4 md:mx-12 mt-10 flex flex-row items-start md:items-center justify-between">
@@ -75,6 +75,7 @@ function DiscoverPage() {
                         <option value="Comedy">Comedy</option>
                         <option value="Crime">Crime</option>
                         <option value="Drama">Drama</option>
+                        <option value="Family">Family</option>
                         <option value="Fantasy">Fantasy</option>
                         <option value="Mystery">Mystery</option>
                         <option value="Romance">Romance</option>
@@ -88,7 +89,7 @@ function DiscoverPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8 px-4 md:px-12">
                 {filteredKdramas.map((kdrama) => (
                     <Link to={`/kdrama/${kdrama.id}`} key={kdrama.id}>
-                        <div className="relative cursor-pointer">
+                        <div className="relative cursor-pointer border border-[#F5F5F5] rounded-lg ">
                             <img src={kdrama.poster} alt={kdrama.name} className="w-full h-auto rounded-lg" />
                             <div className="absolute bottom-2 right-2 bg-[#FFF8E1] text-[#f5d000] px-2 py-0.5 rounded-full text-md flex items-center space-x-1">
                                 <StarIcon className="text-[#f5d000] h-4 w-4"/>
