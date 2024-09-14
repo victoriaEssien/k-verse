@@ -80,7 +80,7 @@ function DiscoverPage() {
                         <option value="Mystery">Mystery</option>
                         <option value="Romance">Romance</option>
                         <option value="Sci-Fi">Sci-Fi</option>
-                        <option value="Thriller">Thrille99r</option>
+                        <option value="Thriller">Thriller</option>
                         {/* Add more options as needed */}
                     </select>
                 </div>
