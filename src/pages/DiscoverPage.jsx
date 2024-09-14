@@ -57,7 +57,7 @@ function DiscoverPage() {
                 <div>
                     <h1 className="text-4xl font-roboto font-bold text-[#333]">Discover</h1>
                     <p className="text-[#A3A3A3] font-os text-base leading-normal md:w-[450px] mt-2">
-                        Browse top-rattted K-Dramas, new arrivals, and fan favorites to add to your watchlist.
+                        Browse top-rated K-Dramas, new arrivals, and fan favorites to add to your watchlist.
                     </p>
                 </div>
 
