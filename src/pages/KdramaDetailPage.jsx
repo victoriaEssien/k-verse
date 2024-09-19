@@ -73,19 +73,6 @@ function KdramaDetailPage() {
               ))}
             </div>
           </div>
-
-          <div className="mt-4">
-            <h2 className="font-bold font-roboto text-[#333]">Where to Watch</h2>
-            <ul className="list-disc ml-5 mt-2">
-              {kdrama.locations.map((location, index) => (
-                <li key={index} className="text-[#2E7D32]">
-                  <a href={location} target="_blank" rel="noopener noreferrer" className="underline">
-                    {location}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
     </div>
