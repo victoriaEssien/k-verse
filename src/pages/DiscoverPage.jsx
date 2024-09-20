@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import { db } from "../firebase_setup/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { StarIcon } from "@heroicons/react/16/solid";
+import ScrollToTop from "react-scroll-to-top";
+import KdramaSkeleton from "../components/KdramaSkeleton";
 
 function DiscoverPage() {
     const [kdramas, setKdramas] = useState([]);
     const [filteredKdramas, setFilteredKdramas] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("");
+    const [searchQuery, setSearchQuery] = useState(""); // Search state
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchKdramas = async () => {
@@ -19,13 +23,14 @@ function DiscoverPage() {
                     ...doc.data(),
                 }));
 
-                // Shuffle the list of kdramas
                 const shuffledKdramaList = kdramaList.sort(() => Math.random() - 0.5);
 
                 setKdramas(shuffledKdramaList);
                 setFilteredKdramas(shuffledKdramaList); // Initially, show all kdramas
+                setLoading(false);
             } catch (error) {
                 console.error("Error fetching kdramas:", error);
+                setLoading(false);
             }
         };
 
@@ -33,24 +38,46 @@ function DiscoverPage() {
     }, []);
 
     useEffect(() => {
-        if (selectedCategory === "") {
-            setFilteredKdramas(kdramas); // Show all kdramas if no category is selected
-        } else {
-            const filtered = kdramas.filter(kdrama =>
+        let updatedKdramas = kdramas;
+
+        if (selectedCategory !== "") {
+            updatedKdramas = updatedKdramas.filter(kdrama =>
                 kdrama.tags.includes(selectedCategory)
             );
-            setFilteredKdramas(filtered);
         }
-    }, [selectedCategory, kdramas]);
+
+        if (searchQuery) {
+            updatedKdramas = updatedKdramas.filter(kdrama =>
+                kdrama.name.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+        }
+
+        setFilteredKdramas(updatedKdramas);
+    }, [selectedCategory, searchQuery, kdramas]);
 
     const handleCategoryChange = (event) => {
         setSelectedCategory(event.target.value);
     };
 
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
     return (
         <div>
-            <header className="border-b border-[#F5F5F5] px-4 md:px-12 py-3">
-                <Link to='/discover' className="font-roboto font-bold text-xl text-[#2E7D32] leading-8">K-Verse</Link>
+            <header className="border-b sticky top-0 z-10 bg-[#fff] border-[#F5F5F5] px-4 md:px-12 lg:px-12 py-3 flex justify-between items-center">
+                <Link to='/discover' className="font-roboto font-bold text-xl text-[#2E7D32] leading-8">
+                    K-Verse
+                </Link>
+
+                {/* Search bar */}
+                <input
+                    type="text"
+                    placeholder="Search K-Dramas by name..."
+                    className="px-4 py-2 border border-[#D1D1D1] rounded-lg max-w-xs w-4/6 md:w-full font-os text-[#333] outline-[#2E7D32]"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                />
             </header>
 
             <div className="mx-4 md:mx-12 mt-10 flex flex-row items-start md:items-center justify-between">
@@ -83,24 +110,34 @@ function DiscoverPage() {
                         <option value="Sci-Fi">Sci-Fi</option>
                         <option value="Thriller">Thriller</option>
                         <option value="War">War</option>
-                        {/* Add more options as needed */}
                     </select>
                 </div>
             </div>
 
+            {/* Grid for Kdramas */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8 px-4 md:px-12">
-                {filteredKdramas.map((kdrama) => (
-                    <Link to={`/kdrama/${kdrama.id}`} key={kdrama.id}>
-                        <div className="relative cursor-pointer border border-[#F5F5F5] rounded-lg ">
-                            <img src={kdrama.poster} alt={kdrama.name} className="w-full h-auto rounded-lg" />
-                            <div className="absolute bottom-2 right-2 bg-[#FFF8E1] text-[#f5d000] px-2 py-0.5 rounded-full text-md flex items-center space-x-1">
-                                <StarIcon className="text-[#f5d000] h-4 w-4"/>
-                                <span>0.0</span>
+                {loading ? (
+                    Array.from({ length: 8 }).map((_, index) => <KdramaSkeleton key={index} />)
+                ) : (
+                    filteredKdramas.map((kdrama) => (
+                        <Link to={`/kdrama/${kdrama.id}`} key={kdrama.id}>
+                            <div className="relative cursor-pointer border border-[#F5F5F5] rounded-lg">
+                                <img src={kdrama.poster} alt={kdrama.name} className="w-full h-auto rounded-lg" />
+                                <div className="absolute bottom-2 right-2 bg-[#2E7D32] text-[#fff] px-3 py-1 rounded-full text-md flex items-center gap-x-2">
+                                    <StarIcon className="text-[#fff] h-4 w-4" />
+                                    <span className="font-os font-medium">0.00</span>
+                                </div>
                             </div>
-                        </div>
-                    </Link>
-                ))}
+                        </Link>
+                    ))
+                )}
             </div>
+
+            <ScrollToTop
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '8px' }}
+                smooth
+                color="#2E7D32"
+            />
         </div>
     );
 }
