@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        'os': ['Open Sans', 'sans-serif']
+      },
+      backgroundImage: {
+        'hero-bg': "url('/src/assets/images/waitlist-hero-img.png')"
+      },
+    },
   },
   plugins: [],
 }
