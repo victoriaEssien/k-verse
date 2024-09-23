@@ -45,35 +45,50 @@ function KdramaDetailPage() {
 
       <div className="mx-4 md:mx-12 mt-10 flex flex-col md:flex-row">
         <div className="md:w-1/2">
-          <img src={kdrama.poster} alt={kdrama.name} className="w-full h-auto rounded-lg" />
+          <img src={kdrama.poster} alt={kdrama.name} className="w-full full rounded-lg" />
         </div>
 
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0">
-          <h1 className="text-3xl font-bold font-roboto text-[#333]">{kdrama.name}</h1>
-          <p className="text-[#A3A3A3] font-os text-base leading-normal mt-4">{kdrama.plot}</p>
+          <h1 className="text-3xl font-bold font-roboto text-[#2E7D32]">{kdrama.name} ({kdrama.year}) </h1>
+          <p className="text-[#888] font-os text-base leading-normal mt-4">{kdrama.plot}</p>
 
-          <div className="mt-4">
-            <h2 className="font-bold font-roboto text-[#333]">Details</h2>
-            <p><strong>Seasons:</strong> {kdrama.seasons}</p>
-            <p><strong>Episodes:</strong> {kdrama.episodes}</p>
-            <p><strong>Status:</strong> {kdrama.status}</p>
-            <p><strong>Year:</strong> {kdrama.year}</p>
-          </div>
+          <div className="mt-6 flex flex-col gap-y-6">
+            <div>
+              <h3 className="text-base font-medium font-roboto text-[#999999]">Seasons</h3>
+              <p className="text-[17px] font-os text-[#333]">{kdrama.seasons}</p>
+            </div>
 
-          <div className="mt-4">
-            <h2 className="font-bold font-roboto text-[#333]">Tags</h2>
+            <div>
+              <h3 className="text-base font-medium font-roboto text-[#999999]">Episodes</h3>
+              <p className="text-[17px] font-lato text-[#333]">{kdrama.episodes}</p>
+            </div>
+
+            <div>
+              <h3 className="text-base font-medium font-roboto text-[#999999]">Status</h3>
+              <p className="text-[17px] font-os text-[#333]">{kdrama.status}</p>
+            </div>
+
+            <div>
+            <h2 className="text-base font-medium font-roboto text-[#999999]">Tags</h2>
             <div className="flex flex-wrap gap-2 mt-2">
               {kdrama.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-[#F5F5F5] text-[#333] text-sm rounded-lg"
+                  className="px-3.5 py-2 bg-[#F5F5F5] text-[#333] text-md rounded-lg"
                 >
                   {tag}
                 </span>
               ))}
             </div>
+
           </div>
+          </div>
+          
         </div>
+      </div>
+
+      <div>
+        
       </div>
     </div>
   );
