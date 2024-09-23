@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { MdHome, MdExplore, MdSettings, MdPerson } from "react-icons/md";
+import { MdHome, MdExplore, MdSettings } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
 import { useEffect, useState } from 'react';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
@@ -59,7 +60,7 @@ function BottomNavBar() {
             {profilePicture ? (
               <img src={profilePicture} alt="Profile" className="w-7 md:w-10 h-7 md:h-10 rounded-full" />
             ) : (
-              <MdPerson className="w-10 h-10" />
+              <CgProfile className="w-10 h-10" />
             )}
           </Link>
         </div>
