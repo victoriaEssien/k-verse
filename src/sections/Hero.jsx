@@ -15,7 +15,7 @@ function Hero() {
                 <Link to='signup'>
                   <button type='button' className='bg-[#2E7D32] rounded-md font-os text-center block md:inline font-lato text-white text-lg font-normal w-full md:w-fit px-7 py-3.5 hover:bg-primary-800'>Get started!</button>
                 </Link>
-                <Link to='/discover'>
+                <Link to='/explore'>
                   <button type='button' className='border border-[#2E7D32] rounded-md font-os text-center block md:inline font-lato text-[#2E7D32] text-[18px] font-normal w-full md:w-fit px-7 py-3.5'>Explore Kdramas</button>
                 </Link>
                 </div>

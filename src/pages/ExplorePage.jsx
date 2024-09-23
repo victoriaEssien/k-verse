@@ -5,8 +5,9 @@ import { collection, getDocs } from "firebase/firestore";
 import { StarIcon } from "@heroicons/react/16/solid";
 import ScrollToTop from "react-scroll-to-top";
 import KdramaSkeleton from "../components/KdramaSkeleton";
+import BottomNavBar from "../components/BottomNavBar";
 
-function DiscoverPage() {
+function ExplorePage() {
     const [kdramas, setKdramas] = useState([]);
     const [filteredKdramas, setFilteredKdramas] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("");
@@ -66,7 +67,7 @@ function DiscoverPage() {
     return (
         <div>
             <header className="border-b sticky top-0 z-10 bg-[#fff] border-[#F5F5F5] px-4 md:px-12 lg:px-12 py-3 flex justify-between items-center">
-                <Link to='/discover' className="font-roboto font-bold text-xl text-[#2E7D32] leading-8">
+                <Link to='/explore' className="font-roboto font-bold text-xl text-[#2e7d32] leading-8">
                     K-Verse
                 </Link>
 
@@ -82,7 +83,7 @@ function DiscoverPage() {
 
             <div className="mx-4 md:mx-12 mt-10 flex flex-row items-start md:items-center justify-between">
                 <div>
-                    <h1 className="text-4xl font-roboto font-bold text-[#333]">Discover</h1>
+                    <h1 className="text-4xl font-roboto font-bold text-[#333]">Explore</h1>
                     <p className="text-[#A3A3A3] font-os text-base leading-normal md:w-[450px] mt-2">
                         Browse top-rated K-Dramas, new arrivals, and fan favorites to add to your watchlist.
                     </p>
@@ -134,12 +135,14 @@ function DiscoverPage() {
             </div>
 
             <ScrollToTop
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '8px' }}
+                style={{ display: 'flex', position: 'fixed', bottom: '60px', right: '20px', justifyContent: 'center', alignItems: 'center', padding: '8px', zIndex: '100' }}
                 smooth
                 color="#2E7D32"
             />
+            {/* Bottom navbar */}
+            <BottomNavBar />
         </div>
     );
 }
 
-export default DiscoverPage;
+export default ExplorePage;
