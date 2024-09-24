@@ -31,9 +31,9 @@ function BottomNavBar() {
 
   // Define the links and their corresponding icons
   const navLinks = [
-    { to: '/home', icon: <MdHome className="w-7 md:w-8 h-7 md:h-8" />, label: 'Home' },
-    { to: '/explore', icon: <MdExplore className="w-7 md:w-8 h-7 md:h-8" />, label: 'Explore' },
-    { to: '/settings', icon: <MdSettings className="w-7 md:w-8 h-7 md:h-8" />, label: 'Settings' },
+    { to: '/home', icon: <MdHome className="w-7 h-7 md:w-8  md:h-8" />, label: 'Home' },
+    { to: '/explore', icon: <MdExplore className="w-7 h-7 md:w-8 md:h-8" />, label: 'Explore' },
+    { to: '/settings', icon: <MdSettings className="w-7 h-7 md:w-8 md:h-8" />, label: 'Settings' },
   ];
 
   return (
@@ -47,19 +47,19 @@ function BottomNavBar() {
               to={to}
               className={`flex flex-col items-center text-center ${
                 location.pathname === to ? 'text-[#2E7D32]' : 'text-gray-500'
-              }`}
+              } min-[60px]`}
             >
               {icon}
-              <span className="hidden md:block">{label}</span> {/* Show label on desktop */}
+              <span className="hidden md:block mt-1">{label}</span> {/* Show label on desktop */}
             </Link>
           ))}
 
           {/* Profile Picture */}
           <div className="flex items-center">
             {profilePicture ? (
-              <img src={profilePicture} alt="Profile" className="w-7 md:w-10 h-7 md:h-10 rounded-full" />
+              <img src={profilePicture} alt="Profile" className="w-7 h-7 md:w-10 md:h-10 rounded-full" />
             ) : (
-              <img src="https://firebasestorage.googleapis.com/v0/b/k-verse-7e64e.appspot.com/o/pfps%2Fdefaultpfp.png?alt=media&token=33792516-8689-423f-bf20-6dc47a6460e4" className="w-10 h-10" />
+              <img src="https://firebasestorage.googleapis.com/v0/b/k-verse-7e64e.appspot.com/o/pfps%2Fdefaultpfp.png?alt=media&token=33792516-8689-423f-bf20-6dc47a6460e4" className="w-7 h-7 md:w-10 md:h-10" />
             )}
           </div>
         </div>

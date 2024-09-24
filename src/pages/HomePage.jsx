@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom"
+import ComingSoon from "../components/ComingSoon"
 import BottomNavBar from "../components/BottomNavBar"
 
 function HomePage() {
@@ -10,6 +11,11 @@ function HomePage() {
                 K-Verse
             </Link>
         </header>
+
+        {/* Main content */}
+        <div className="mx-4 md:mx-12 mt-10">
+          <ComingSoon />
+        </div>
 
         {/* Bottom navbar */}
         <BottomNavBar />
