@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { MdHome, MdExplore, MdSettings } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
 import { useEffect, useState } from 'react';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
@@ -56,13 +55,13 @@ function BottomNavBar() {
           ))}
 
           {/* Profile Picture */}
-          <Link to="/profile" className="flex items-center">
+          <div className="flex items-center">
             {profilePicture ? (
               <img src={profilePicture} alt="Profile" className="w-7 md:w-10 h-7 md:h-10 rounded-full" />
             ) : (
-              <CgProfile className="w-10 h-10" />
+              <img src="https://firebasestorage.googleapis.com/v0/b/k-verse-7e64e.appspot.com/o/pfps%2Fdefaultpfp.png?alt=media&token=33792516-8689-423f-bf20-6dc47a6460e4" className="w-10 h-10" />
             )}
-          </Link>
+          </div>
         </div>
       </nav>
     </div>
