@@ -123,14 +123,14 @@ function Login() {
           <form className="w-full mx-auto" onSubmit={handleLogin}>
             {/* Email Input */}
             <div>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={() => validateEmail(email)} className="font-lato mx-auto w-full md:w-full block rounded-lg border border-[#D1D1D1] px-4 py-3 text-base text-[#333] placeholder:text-[#ccc] outline-[#2E7D32] '" placeholder="Email address" />
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={() => validateEmail(email)} className="font-os mx-auto w-full md:w-full block rounded-lg border border-[#D1D1D1] px-4 py-3 text-base text-[#333] placeholder:text-[#ccc] outline-[#2E7D32] '" placeholder="Email address" />
               {emailError && <p className='text-sm text-red-500 mt-1'>{emailError}</p>}
             </div>
 
             {/* Password Input */}
             <div className='relative mt-4'>
                 <div className='flex items-center'>
-                    <input type={showPassword ? 'text' : 'password'} name='password' id='password' className="font-lato mx-auto w-full block rounded-lg border border-[#D1D1D1] px-4 py-3 text-base text-[#333] placeholder:text-[#ccc] outline-[#2E7D32] '" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} onBlur={() => validatePassword(password)} />
+                    <input type={showPassword ? 'text' : 'password'} name='password' id='password' className="font-os mx-auto w-full block rounded-lg border border-[#D1D1D1] px-4 py-3 text-base text-[#333] placeholder:text-[#ccc] outline-[#2E7D32] '" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} onBlur={() => validatePassword(password)} />
                     <button type='button' className='absolute text-base font-montserrat right-0 px-4 py-3' onClick={handlePasswordVisibility}>{showPassword ? <EyeIcon className="h-6 w-6 text-[#b3b3b3]" /> : <EyeSlashIcon className="h-6 w-6 text-[#b3b3b3]" />}</button>
                 </div>
                 {passwordError && <p className='text-sm text-red-500 mt-1'>{passwordError}</p>}

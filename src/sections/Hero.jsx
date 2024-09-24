@@ -19,10 +19,13 @@ function Hero() {
                   <button type='button' className='border border-[#2E7D32] rounded-md font-os text-center block md:inline font-lato text-[#2E7D32] text-[18px] font-normal w-full md:w-fit px-7 py-3.5'>Explore Kdramas</button>
                 </Link>
                 </div>
+                <div className="mt-2">
+                  <small className="font-os text-[#888]"><span className="font-semibold">Note:</span> You cannot stream or download any kdrama with K-Verse</small>
+                </div>
             </div>
 
             {/* Hero image */}
-            <div className='w-12/12 md:w-12/12 mt-8 md:mt-0 flex self-center'>
+            <div className='w-12/12 md:w-12/12 mt-10 md:mt-0 flex self-center'>
                 <img className='w-full' src={HeroImg} alt="Collection of kdrama poster images from Etsy designed by Pierceyourheart" />
             </div>
         </div>

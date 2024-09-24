@@ -14,7 +14,10 @@ function HomePage() {
 
         {/* Main content */}
         <div className="mx-4 md:mx-12 mt-10">
-          <ComingSoon />
+        <ComingSoon 
+          heading="Coming Soon: Post and Share!" 
+          description="Soon, you'll be able to share your thoughts, like, and comment on posts. We want your feedback—let us know how you can support us through donations!" 
+        />
         </div>
 
         {/* Bottom navbar */}

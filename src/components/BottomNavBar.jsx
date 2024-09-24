@@ -37,7 +37,7 @@ function BottomNavBar() {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-20 bg-[#fff] shadow-md">
+    <div className="fixed bottom-0 left-0 right-0 z-20 bg-[#fff] shadow-md border">
       <nav className="flex justify-between items-center py-4 md:py-3.5"> 
         {/* Navigation Links */}
         <div className="flex flex-grow justify-around">
@@ -55,13 +55,13 @@ function BottomNavBar() {
           ))}
 
           {/* Profile Picture */}
-          <div className="flex items-center">
+          <Link to="/profile" className="flex items-center">
             {profilePicture ? (
-              <img src={profilePicture} alt="Profile" className="w-7 h-7 md:w-10 md:h-10 rounded-full" />
+              <img src={profilePicture} alt="Profile" className="w-7 h-7 md:w-10 md:h-10 object-cover rounded-full" />
             ) : (
-              <img src="https://firebasestorage.googleapis.com/v0/b/k-verse-7e64e.appspot.com/o/pfps%2Fdefaultpfp.png?alt=media&token=33792516-8689-423f-bf20-6dc47a6460e4" className="w-7 h-7 md:w-10 md:h-10" />
+              <img src="https://firebasestorage.googleapis.com/v0/b/k-verse-7e64e.appspot.com/o/pfps%2Fdefaultpfp.png?alt=media&token=33792516-8689-423f-bf20-6dc47a6460e4" className="w-7 h-7 md:w-10 md:h-10 object-cover rounded-full" />
             )}
-          </div>
+          </Link>
         </div>
       </nav>
     </div>
