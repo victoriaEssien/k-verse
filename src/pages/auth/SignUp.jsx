@@ -70,7 +70,7 @@ function SignUp() {
 
       // Default profile values
       const defaultProfilePic = "https://firebasestorage.googleapis.com/v0/b/k-verse-7e64e.appspot.com/o/pfps%2Fdefaultpfp.png?alt=media&token=33792516-8689-423f-bf20-6dc47a6460e4";
-      const defaultDisplayName = `User${user.uid.substring(0, 6)}`;
+      const defaultDisplayName = `Chingu-${user.uid.substring(0, 6)}`;
 
       // Create user document in Firestore
       await setDoc(doc(db, "users", user.uid), {

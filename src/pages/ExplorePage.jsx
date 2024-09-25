@@ -140,7 +140,7 @@ function ExplorePage() {
                 color="#2E7D32"
             />
             {/* Bottom navbar */}
-            <div className="mt-24">
+            <div className="pt-24">
             <BottomNavBar />
             </div>
         </div>
