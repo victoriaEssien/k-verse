@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom"
+import ComingSoon from "../components/ComingSoon"
 import BottomNavBar from "../components/BottomNavBar"
 
 function HomePage() {
@@ -11,8 +12,18 @@ function HomePage() {
             </Link>
         </header>
 
+        {/* Main content */}
+        <div className="mx-4 md:mx-12 mt-10">
+        <ComingSoon 
+          heading="Coming Soon: Post and Share!" 
+          description="Soon, you'll be able to share your thoughts, like, and comment on posts. We want your feedback—let us know how you can support us through donations!" 
+        />
+        </div>
+
         {/* Bottom navbar */}
+        <div className="mt-24">
         <BottomNavBar />
+        </div>
     </div>
   )
 }

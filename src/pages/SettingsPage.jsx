@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom"
+import ComingSoon from "../components/ComingSoon"
 import BottomNavBar from "../components/BottomNavBar"
 
 function SettingsPage() {
@@ -11,8 +12,18 @@ function SettingsPage() {
             </Link>
         </header>
 
+        {/* Main content */}
+        <div className="mx-4 md:mx-12 mt-10">
+        <ComingSoon 
+          heading="Settings Coming Soon!" 
+          description="We're working on customizable settings to enhance your experience. Meanwhile, explore other features and share any specific settings you'd like to see." 
+        />
+        </div>
+
         {/* Bottom navbar */}
+        <div className="mt-24">
         <BottomNavBar />
+        </div>
     </div>
   )
 }

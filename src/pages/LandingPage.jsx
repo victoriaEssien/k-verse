@@ -1,8 +1,9 @@
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 // import ProtectedRoute from "../components/ProtectedRoute"
-import { Hero, SignUp, Login, ExplorePage, KdramaDetailPage, HomePage, SettingsPage } from "../index"
+import { Hero, SignUp, Login, ExplorePage, KdramaDetailPage, HomePage, SettingsPage, Profile } from "../index"
 import Navbar from "../components/Navbar"
+import ProtectedRoute from "../components/ProtectedRoute"
 
 
 
@@ -26,6 +27,7 @@ function LandingPage() {
                     <Route path="/kdrama/:id" element={<KdramaDetailPage />} />
                     <Route path="/home" element={<HomePage />} />
                     <Route path="/settings" element={<SettingsPage />} />
+                    <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
                     {/* <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/verify-email" element={<VerifyEmail />} />
