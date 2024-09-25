@@ -93,7 +93,7 @@ function ExplorePage() {
                     <select
                         id="category-filter"
                         name="category-filter"
-                        className="mt-2 px-4 py-2 outline-none border border-[#D1D1D1] rounded-lg w-full max-w-xs font-os text-[#333]"
+                        className="px-4 py-2 outline-none border border-[#D1D1D1] rounded-lg w-full max-w-xs font-os text-[#333]"
                         value={selectedCategory}
                         onChange={handleCategoryChange}
                     >

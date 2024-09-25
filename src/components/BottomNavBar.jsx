@@ -1,16 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { MdHome, MdExplore, MdSettings } from "react-icons/md";
 import { useEffect, useState } from 'react';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import { auth, db } from "../firebase_setup/firebase";
+
 
 function BottomNavBar() {
   const location = useLocation();
   const [profilePicture, setProfilePicture] = useState(null);
-
-  // Initialize Firebase Firestore
-  const db = getFirestore();
-  const auth = getAuth();
 
   useEffect(() => {
     const fetchProfilePicture = async () => {
@@ -27,7 +24,7 @@ function BottomNavBar() {
     };
 
     fetchProfilePicture();
-  }, [db, auth]);
+  }, []);
 
   // Define the links and their corresponding icons
   const navLinks = [

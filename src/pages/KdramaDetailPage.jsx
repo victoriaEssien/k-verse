@@ -7,7 +7,8 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getAuth } from "firebase/auth";
-import BottomNavBar from "../components/BottomNavBar";
+import Cookies from "js-cookie";
+
 
 function SkeletonLoader() {
   return (
@@ -38,6 +39,7 @@ function KdramaDetailPage() {
     thoughts: "",
   });
   const auth = getAuth();
+  const accessToken = Cookies.get('k-verse-access-token');
 
 
   useEffect(() => {
@@ -69,7 +71,13 @@ function KdramaDetailPage() {
   }
 
   const handleModalOpen = () => {
-    setIsModalOpen(true);
+    if (!accessToken) {
+      // Show a toast if the user is not signed in
+      toast.warn('Please sign in first to continue.');
+    } else {
+      // Open the modal if the user is signed in
+      setIsModalOpen(true);
+    }
   };
 
   const handleModalClose = () => {
@@ -137,8 +145,15 @@ function KdramaDetailPage() {
 
   return (
     <div className="">
-      <header className="border-b border-[#F5F5F5] px-4 md:px-12 py-3">
+      <header className="border-b border-[#F5F5F5] px-4 md:px-12 py-3 flex flex-row items-center justify-between">
         <Link to='/explore' className="font-roboto font-bold text-xl text-[#2E7D32] leading-8">K-Verse</Link>
+        {/* Conditionally show login and sign-up buttons if user is not signed in */}
+        {!accessToken && (
+          <div className="flex flex-row gap-x-3">
+            <Link to='/login' className="block font-os font-medium text-base border border-[#2E7D32] text-[#2E7D32] px-4 py-2 rounded-lg">Log In</Link>
+            <Link to='/signup' className="block font-os font-medium text-base bg-[#2E7D32] text-[#fff] px-4 py-2 rounded-lg">Sign Up</Link>
+          </div>
+        )}
       </header>
 
       <div className="mx-4 md:mx-12 my-10 flex flex-col md:flex-row">
