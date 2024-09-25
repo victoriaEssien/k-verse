@@ -329,7 +329,7 @@ function KdramaDetailPage() {
       </div>
       {/* Toast container */}
       <ToastContainer />
-      <div className="mt-24">
+      <div className="pt-24">
       <BottomNavBar />
       </div>
     </div>
