@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getAuth } from "firebase/auth";
 import Cookies from "js-cookie";
+import BottomNavBar from "../components/BottomNavBar";
 
 
 function SkeletonLoader() {
@@ -123,7 +124,7 @@ function KdramaDetailPage() {
         status: formData.status,
         list: formData.list,
         thoughts: formData.thoughts,
-        addedAt: new Date(),
+        addedAt: new Date().toISOString(),
       });
 
       toast.success(`${kdrama.name} has been added to your list`);
@@ -184,7 +185,7 @@ function KdramaDetailPage() {
 
             <div>
             <h2 className="text-base font-medium font-roboto text-[#999999]">Tags</h2>
-            <div className="flex flex-wrap gap-2 mt-2">
+            <div className="flex flex-wrap gap-3 mt-2">
               {kdrama.tags.map((tag, index) => (
                 <span
                   key={index}
@@ -208,7 +209,7 @@ function KdramaDetailPage() {
       <div>
         {/* Modal */}
         <Transition appear show={isModalOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={handleModalClose}>
+                <Dialog as="div" className="relative z-30" onClose={handleModalClose}>
                 <TransitionChild
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -256,12 +257,12 @@ function KdramaDetailPage() {
                                 onChange={handleChange}
                               >
                                 <option value="">Select Status</option>
-                                <option value="Currently Watching">Currently Watching</option>
-                                <option value="Plan to Watch">Plan to Watch</option>
+                                <option value="Completed">Completed</option>
                                 <option value="Dropped">Dropped</option>
                                 <option value="On-Hold">On-Hold</option>
-                                <option value="Completed">Completed</option>
+                                <option value="Plan to Watch">Plan to Watch</option>
                                 <option value="Rewatching">Rewatching</option>
+                                <option value="Watching">Watching</option>
                               </select>
                             </div>
 
@@ -328,7 +329,9 @@ function KdramaDetailPage() {
       </div>
       {/* Toast container */}
       <ToastContainer />
-      {/* <BottomNavBar /> */}
+      <div className="mt-24">
+      <BottomNavBar />
+      </div>
     </div>
   );
 }

@@ -21,7 +21,9 @@ function SettingsPage() {
         </div>
 
         {/* Bottom navbar */}
+        <div className="mt-24">
         <BottomNavBar />
+        </div>
     </div>
   )
 }
