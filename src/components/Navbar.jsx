@@ -53,7 +53,7 @@ function Navbar() {
                 <div className='fixed inset-0 z-50' />
                 <DialogPanel className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white'>
                     <div className="flex items-center justify-between">
-                        <a href="#" className='-m-1.5 p-5 flex items-center gap-x-2'>
+                        <a href="/" className='-m-1.5 p-5 flex items-center gap-x-2'>
                         {/* <img className='w-[35px]' src={Logo} alt="Logo"/> */}
                         <span className='font-roboto font-bold text-xl text-[#2E7D32] leading-8'>K-Verse</span>
                         </a>

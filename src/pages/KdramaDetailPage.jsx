@@ -15,14 +15,14 @@ function SkeletonLoader() {
   return (
     <div className="mx-4 md:mx-12 my-10 flex flex-col md:flex-row animate-pulse">
       <div className="md:w-2/6">
-        <div className="bg-gray-300 h-64 rounded-lg mx-auto"></div>
+        <div className="bg-gray-300 h-64 rounded-lg mx-auto" />
       </div>
       <div className="md:w-1/2 md:pl-8 mt-10 md:mt-0">
-        <div className="bg-gray-300 h-8 w-3/4 rounded mb-4"></div>
-        <div className="bg-gray-300 h-4 w-2/4 rounded mb-2"></div>
-        <div className="bg-gray-300 h-4 w-1/3 rounded mb-4"></div>
-        <div className="bg-gray-300 h-4 w-1/2 rounded mb-2"></div>
-        <div className="bg-gray-300 h-4 w-1/3 rounded mb-2"></div>
+        <div className="bg-gray-300 h-8 w-3/4 rounded mb-4" />
+        <div className="bg-gray-300 h-4 w-2/4 rounded mb-2" />
+        <div className="bg-gray-300 h-4 w-1/3 rounded mb-4" />
+        <div className="bg-gray-300 h-4 w-1/2 rounded mb-2" />
+        <div className="bg-gray-300 h-4 w-1/3 rounded mb-2" />
       </div>
     </div>
   );
@@ -40,7 +40,7 @@ function KdramaDetailPage() {
     thoughts: "",
   });
   const auth = getAuth();
-  const accessToken = Cookies.get('k-verse-access-token');
+  const accessToken = Cookies.get(import.meta.env.VITE_ACCESS_TOKEN_ID);
 
 
   useEffect(() => {
@@ -200,7 +200,7 @@ function KdramaDetailPage() {
 
           {/* Add to watchlist btn */}
           <div className="mt-8">
-            <button className="font-os font-medium text-[#fff] text-lg bg-[#2E7D32] hover:bg-[#29702d] mx-auto w-full rounded-lg px-10 py-3.5" onClick={handleModalOpen}>Add to My List</button>
+            <button type="button" className="font-os font-medium text-[#fff] text-lg bg-[#2E7D32] hover:bg-[#29702d] mx-auto w-full rounded-lg px-10 py-3.5" onClick={handleModalOpen}>Add to My List</button>
           </div>
         </div>
       </div>
@@ -235,7 +235,7 @@ function KdramaDetailPage() {
                     >
                         <DialogPanel className="w-full max-w-md transform overflow-hidden bg-[#fff] rounded-lg p-6 text-left align-middle shadow-xl transition-all">
                         <div className="flex justify-end">
-                            <button className="rounded-full p-1 hover:bg-[#ECF8ED]" onClick={handleModalClose}>
+                            <button type="button" className="rounded-full p-1 hover:bg-[#ECF8ED]" onClick={handleModalClose}>
                             <XMarkIcon className="h-6 w-6 text-[#2E7D32]" />
                             </button>
                         </div>
