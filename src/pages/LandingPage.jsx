@@ -1,6 +1,5 @@
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
-// import ProtectedRoute from "../components/ProtectedRoute"
 import { Hero, SignUp, Login, ExplorePage, KdramaDetailPage, HomePage, SettingsPage, Profile } from "../index"
 import Navbar from "../components/Navbar"
 import ProtectedRoute from "../components/ProtectedRoute"
