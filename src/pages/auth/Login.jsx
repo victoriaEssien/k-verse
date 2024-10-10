@@ -80,7 +80,7 @@ function Login() {
 
       // Generate access token and store it in a cookie with a 7-day expiration
       const accessToken = generateAccessToken();
-      Cookies.set('k-verse-access-token', accessToken, { expires: 7 });
+      Cookies.set(import.meta.env.VITE_ACCESS_TOKEN_ID, accessToken, { expires: 7 });
 
       setLoading(false);
       setError('');

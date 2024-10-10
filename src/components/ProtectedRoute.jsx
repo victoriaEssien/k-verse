@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import PropTypes from 'prop-types';
 
 const ProtectedRoute = ({ children }) => {
-    const accessToken = Cookies.get('k-verse-access-token');
+    const accessToken = Cookies.get(import.meta.env.VITE_ACCESS_TOKEN_ID);
     
     if (!accessToken) {
         // Redirect to login if token is not found

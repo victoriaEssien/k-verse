@@ -43,7 +43,7 @@ function BottomNavBar() {
               key={to}
               to={to}
               className={`flex flex-col items-center text-center ${
-                location.pathname === to ? 'text-[#2E7D32]' : 'text-gray-500'
+                location.pathname === to ? 'text-[#2E7D32]' : 'text-gray-400'
               } min-[60px]`}
             >
               {icon}
@@ -56,7 +56,7 @@ function BottomNavBar() {
             {profilePicture ? (
               <img src={profilePicture} alt="Profile" className="w-7 h-7 md:w-10 md:h-10 object-cover rounded-full" />
             ) : (
-              <img src="https://firebasestorage.googleapis.com/v0/b/k-verse-7e64e.appspot.com/o/pfps%2Fdefaultpfp.png?alt=media&token=33792516-8689-423f-bf20-6dc47a6460e4" className="w-7 h-7 md:w-10 md:h-10 object-cover rounded-full" />
+              <img src="https://firebasestorage.googleapis.com/v0/b/k-verse-7e64e.appspot.com/o/pfps%2Fdefaultpfp.png?alt=media&token=33792516-8689-423f-bf20-6dc47a6460e4" className="w-7 h-7 md:w-10 md:h-10 object-cover rounded-full" alt="default profile illustration" />
             )}
           </Link>
         </div>
