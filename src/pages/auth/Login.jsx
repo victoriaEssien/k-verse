@@ -19,7 +19,6 @@ function Login() {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const navigate = useNavigate();
-  const randomVar = useState('');
 
   // Function to handle password visibility toggle
   const handlePasswordVisibility = () => {
